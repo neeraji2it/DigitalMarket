@@ -3,11 +3,11 @@
 <h4>Contact Details</h4>
 <hr/>
 <div class="form-group">
-  Concerned Person* <br />
+  Concerned Person <br />
   <%= f.text_field :contact_person_name, autofocus: true, class: "form-control", :id => "contact_person_name" %>
 </div>
 <div class="form-group">
-  Mobile* <br />
+  Mobile <br />
   <%= f.text_field :contact_mobile_number, autofocus: true, class: "form-control", :id => "contact_mobile_number" %>
 </div>
 <div class="form-group">
@@ -31,10 +31,12 @@
   <%= f.text_field :contact_fax, autofocus: true, class: "form-control", :id => "contact_telephone" %>
 </div>
 <div class="form-group">
-  Contact Email-Id* <br />
+  Contact Email-Id <br />
   <%= f.email_field :email, autofocus: true, class: "form-control", :id => "email" %>
 </div>
+
 <hr/>
   <%= f.submit %>
-
+  
 <% end %>
+<%= render :partial => "user/profiles/change_password" %>
