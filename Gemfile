@@ -33,6 +33,8 @@ gem 'devise'
 gem 'carrierwave', '~> 0.9'
 gem 'rmagick', :require => false
 gem "jquery-fileupload-rails"
+
+#list of country
 gem 'country_select', github: 'stefanpenner/country_select'
 
 

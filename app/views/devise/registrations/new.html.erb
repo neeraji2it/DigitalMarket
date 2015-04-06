@@ -1,44 +1,118 @@
  <% if !resource.is_a?(Admin) %>
- <h2>Sign up</h2>
+ <h2>Registration Form</h2>
 
  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
  <%= devise_error_messages! %>
- <div class="field">
-<%=  f.label :center_name %><br />
-<%= f.text_field :center_name, autofocus: true %>
- </div>
- <div class="field">
-<%=  f.label :center_address %><br />
-<%= f.text_field :center_address, autofocus: true %>
- </div>
-  <div class="field">
-<%=  f.label :center_zipcode %><br />
-<%= f.text_field :center_zipcode, autofocus: true %>
- </div>
-   <div class="field">
-<%=  f.label :center_state %><br />
-<%= f.text_field :center_state, autofocus: true %>
- </div>
-   <div class="field">
-<%=  f.label :center_city %><br />
-<%= f.text_field :center_city, autofocus: true %>
- </div>
-    <div class="field">
-<%=  f.label :center_country %><br />
-<%= f.country_select :center_country, autofocus: true %>
- </div>
-       <div class="field">
-<%=  f.label :center_fax %><br />
-<%= f.text_field :center_fax, autofocus: true %>
- </div>
-  <div class="field">
-<%=  f.label :center_email %><br />
-<%= f.email_field :center_email, autofocus: true %>
- </div>
- <div class="field">
-<%=  f.label :center_email %><br />
-<%= f.email_field :center_email, autofocus: true %>
- </div>
+
+ <h4>Center Information</h4>
+ <hr/>
+   <div class="form-group">
+    Center Name*<br>
+    <%= f.text_field :center_name , autofocus: true, class: "form-control", :id => "center_name"%>
+  </div>
+     <div class="form-group">
+    Center Address<br>
+    <%= f.text_field :center_address , autofocus: true, class: "form-control", :id => "center_address"%>
+  </div>
+   <div class="form-group">
+    Center Zipcode<br>
+    <%= f.text_field :center_zipcode , autofocus: true, class: "form-control", :id => "center_zipcode"%>
+  </div>
+   <div class="form-group">
+    Center State*<br>
+    <%= f.text_field :center_state , autofocus: true, class: "form-control", :id => "center_state"%>
+  </div>
+     <div class="form-group">
+    Center City*<br>
+    <%= f.text_field :center_city , autofocus: true, class: "form-control", :id => "center_city"%>
+  </div>
+   <div class="form-group">
+    Center Country*<br>
+    <%= f.country_select :center_country , autofocus: true, class: "form-control", :id => "center_country"%>
+  </div>
+ <div class="form-group">
+    Center Telephone*<br>
+    <%= f.text_field :center_number , autofocus: true, class: "form-control", :id => "center_number"%>
+  </div> 
+   <div class="form-group">
+    Center fax<br>
+    <%= f.text_field :center_fax , autofocus: true, class: "form-control", :id => "center_fax"%>
+  </div>
+<div class="form-group">
+Center Email-Id*<br>
+  <%= f.email_field :center_email, autofocus: true, class: "form-control", :id => "center_email" %>
+</div>
+<hr/>
+<h4>Contact Details</h4>
+<hr/>
+<div class="form-group">
+  Concerned Person* <br />
+  <%= f.text_field :contact_person_name, autofocus: true, class: "form-control", :id => "contact_person_name" %>
+</div>
+<div class="form-group">
+  Mobile* <br />
+  <%= f.text_field :contact_mobile_number, autofocus: true, class: "form-control", :id => "contact_mobile_number" %>
+</div>
+<div class="form-group">
+  Telephone <br />
+  <%= f.text_field :contact_telephone, autofocus: true, class: "form-control", :id => "contact_telephone" %>
+</div>
+<div class="form-group">
+  Tech Person <br />
+  <%= f.text_field :tech_person, autofocus: true, class: "form-control", :id => "tech_telephone" %>
+</div>
+<div class="form-group">
+  Mobile <br />
+  <%= f.text_field :tech_mobile, autofocus: true, class: "form-control", :id => "tech_mobile" %>
+</div>
+<div class="form-group">
+  Telephone <br />
+  <%= f.text_field :tech_telephone, autofocus: true, class: "form-control", :id => "tech_telephone" %>
+</div>
+<div class="form-group">
+  Fax<br />
+  <%= f.text_field :contact_fax, autofocus: true, class: "form-control", :id => "contact_telephone" %>
+</div>
+<div class="form-group">
+  Contact Email-Id* <br />
+  <%= f.email_field :email, autofocus: true, class: "form-control", :id => "email" %>
+</div>
+<hr/>
+<h4>Infrastructure Details</h4>
+<hr/>
+<div class="form-group">
+  Name of Dialer*<br />
+  <%= f.text_field :infra_dialer_name, autofocus: true, class: "form-control", :id => "infra_dialer_name" %>
+</div>
+<div class="form-group">
+  Predictive/Manual* <br />
+  <%= f.select :infra_predictive, options_for_select(%w[Predictive Manual]),{}, autofocus: true, class: "form-control", :id => "infra_predictive" %>
+</div>
+<div class="form-group">
+  No. of Seats<br />
+  <%= f.text_field :infra_seat, autofocus: true, class: "form-control", :id => "infra_seat"  %>
+</div>
+<div class="form-group">
+  Primary ISP*<br />
+  <%= f.text_field :infra_primary_isp, autofocus: true, class: "form-control", :id => "infra_primary_isp" %>
+</div>
+<div class="form-group">
+  Secondary ISP <br />
+  <%= f.text_field :infra_secondary_isp, autofocus: true , class: "form-control", :id => "infra_secondary_isp"%>
+</div>
+<div class="form-group">
+  VoIP Gateway (If Any)<br />
+  <%= f.text_field :infra_voip_gateway, autofocus: true, class: "form-control", :id =>"infra_voip_gateway" %>
+</div>
+<div class="form-group">
+ Countries Dialing <br />
+  <%= f.text_field :infra_countries_dialing, autofocus: true ,class: "form-control", :id =>"infra_countries_dialing" %>
+</div>
+<div class="form-group">
+  Server IP<br />
+  <%= f.text_field :infra_server_ip, autofocus: true,class: "form-control", :id =>"infra_server_ip" %>
+</div>
+
 
 <!--  <div class="field">
   <%= f.label :email %><br />

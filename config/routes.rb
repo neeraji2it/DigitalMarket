@@ -7,7 +7,11 @@ end
 
 namespace :user do
   resources :dashboards
-  resources :profiles
+  resources :profiles do
+    member do
+      put :update_profile
+    end
+  end
 end
 
   root "homes#index"

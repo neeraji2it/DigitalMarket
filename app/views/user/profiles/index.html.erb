@@ -1,1 +1,11 @@
-<%= @user.center_name %>
+<p>Concerned Person:<%= @user.contact_person_name %><br></p>
+<p>Mobile:<%= @user.contact_mobile_number %><br></p>
+<p>Telephone: <%= @user.contact_telephone %><br></p>
+<p>Tech Person: <%= @user.tech_person %><br></p>
+<p>Tech Mobile: <%= @user.tech_mobile %><br></p>
+<p>Tech Telephone: <%= @user.tech_telephone %><br></p>
+<p>Fax :<%= @user.contact_fax %><br></p>
+<p>Contact Email-Id: <%= @user.email %></p>
+<%= link_to "Edit", edit_user_profile_path(@user), :class => "btn btn-sm" %>
+
+

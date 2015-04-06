@@ -1,0 +1,40 @@
+<%= form_for @user, :url =>  update_profile_user_profile_path(@user), :method=>:put do |f| %>
+
+<h4>Contact Details</h4>
+<hr/>
+<div class="form-group">
+  Concerned Person* <br />
+  <%= f.text_field :contact_person_name, autofocus: true, class: "form-control", :id => "contact_person_name" %>
+</div>
+<div class="form-group">
+  Mobile* <br />
+  <%= f.text_field :contact_mobile_number, autofocus: true, class: "form-control", :id => "contact_mobile_number" %>
+</div>
+<div class="form-group">
+  Telephone <br />
+  <%= f.text_field :contact_telephone, autofocus: true, class: "form-control", :id => "contact_telephone" %>
+</div>
+<div class="form-group">
+  Tech Person <br />
+  <%= f.text_field :tech_person, autofocus: true, class: "form-control", :id => "tech_telephone" %>
+</div>
+<div class="form-group">
+  Mobile <br />
+  <%= f.text_field :tech_mobile, autofocus: true, class: "form-control", :id => "tech_mobile" %>
+</div>
+<div class="form-group">
+  Telephone <br />
+  <%= f.text_field :tech_telephone, autofocus: true, class: "form-control", :id => "tech_telephone" %>
+</div>
+<div class="form-group">
+  Fax<br />
+  <%= f.text_field :contact_fax, autofocus: true, class: "form-control", :id => "contact_telephone" %>
+</div>
+<div class="form-group">
+  Contact Email-Id* <br />
+  <%= f.email_field :email, autofocus: true, class: "form-control", :id => "email" %>
+</div>
+<hr/>
+  <%= f.submit %>
+
+<% end %>
